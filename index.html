@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>To-Do</h1>
+        <p>Einfach, schnell, lokal gespeichert.</p>
+      </header>
+
+      <section class="app__input">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Neue Aufgabe eingeben..."
+          autocomplete="off"
+          aria-label="Neue Aufgabe"
+        />
+        <button id="add-button" type="button">Hinzufügen</button>
+      </section>
+
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
