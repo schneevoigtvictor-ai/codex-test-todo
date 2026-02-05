@@ -9,9 +9,12 @@
   --primary-dark: #1d4ed8;
   --border: #e5e7eb;
   --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+ codex/create-simple-to-do-website-h3cyt1
   --low: #16a34a;
   --medium: #f59e0b;
   --high: #ef4444;
+
+ main
 }
 
 * {
@@ -31,7 +34,11 @@ body {
 }
 
 .app {
+ codex/create-simple-to-do-website-h3cyt1
   width: min(640px, 100%);
+
+  width: min(520px, 100%);
+ main
   background: var(--card);
   padding: 32px;
   border-radius: 20px;
@@ -52,6 +59,7 @@ body {
 }
 
 .app__input {
+ codex/create-simple-to-do-website-h3cyt1
   display: grid;
   gap: 16px;
 }
@@ -69,18 +77,32 @@ body {
 .field input,
 .field select {
   padding: 12px 14px;
+
+  display: flex;
+  gap: 12px;
+}
+
+.app__input input {
+  flex: 1;
+  padding: 12px 16px;
+ main
   border-radius: 12px;
   border: 1px solid var(--border);
   font-size: 1rem;
   transition: border-color 0.2s ease;
 }
 
+ codex/create-simple-to-do-website-h3cyt1
 .field input:focus,
 .field select:focus {
+
+.app__input input:focus {
+ main
   outline: none;
   border-color: var(--primary);
 }
 
+ codex/create-simple-to-do-website-h3cyt1
 .actions {
   display: flex;
   gap: 12px;
@@ -88,6 +110,9 @@ body {
 }
 
 .actions button {
+
+.app__input button {
+>>>>>>> main
   padding: 12px 18px;
   border-radius: 12px;
   border: none;
@@ -98,6 +123,7 @@ body {
   transition: background 0.2s ease;
 }
 
+ codex/create-simple-to-do-website-h3cyt1
 .actions button:hover {
   background: var(--primary-dark);
 }
@@ -111,6 +137,11 @@ body {
   background: #cbd5f5;
 }
 
+.app__input button:hover {
+  background: var(--primary-dark);
+}
+
+ main
 .todo-list {
   display: flex;
   flex-direction: column;
@@ -119,16 +150,23 @@ body {
 }
 
 .todo-list li {
+ codex/create-simple-to-do-website-h3cyt1
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 12px;
   align-items: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+main
   padding: 12px 16px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #f8fafc;
 }
 
+codex/create-simple-to-do-website-h3cyt1
 .todo-list li.completed {
   opacity: 0.65;
 }
@@ -168,6 +206,10 @@ body {
 
 .priority.high {
   background: var(--high);
+
+.todo-list li span {
+  font-size: 1rem;
+ main
 }
 
 .todo-list button {
@@ -182,16 +224,29 @@ body {
   color: #ef4444;
 }
 
+ codex/create-simple-to-do-website-h3cyt1
 @media (max-width: 540px) {
+
+@media (max-width: 480px) {
+ main
   .app {
     padding: 24px;
   }
 
+ codex/create-simple-to-do-website-h3cyt1
   .todo-list li {
     grid-template-columns: auto 1fr;
   }
 
   .todo-list button {
     justify-self: end;
+
+  .app__input {
+    flex-direction: column;
+  }
+
+  .app__input button {
+    width: 100%;
+main
   }
 }

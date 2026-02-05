@@ -1,12 +1,17 @@
 const input = document.getElementById("todo-input");
+codex/create-simple-to-do-website-h3cyt1
 const dateInput = document.getElementById("todo-date");
 const prioritySelect = document.getElementById("todo-priority");
 const addButton = document.getElementById("add-button");
 const tutorialButton = document.getElementById("tutorial-button");
+
+const addButton = document.getElementById("add-button");
+main
 const list = document.getElementById("todo-list");
 
 const STORAGE_KEY = "todos";
 
+ codex/create-simple-to-do-website-h3cyt1
 const formatDate = (value) => {
   if (!value) {
     return "Kein Datum";
@@ -17,6 +22,7 @@ const formatDate = (value) => {
   }).format(date);
 };
 
+main
 const loadTodos = () => {
   const saved = localStorage.getItem(STORAGE_KEY);
   return saved ? JSON.parse(saved) : [];
@@ -30,6 +36,7 @@ const renderTodos = (todos) => {
   list.innerHTML = "";
   todos.forEach((todo, index) => {
     const item = document.createElement("li");
+codex/create-simple-to-do-website-h3cyt1
     if (todo.completed) {
       item.classList.add("completed");
     }
@@ -70,6 +77,10 @@ const renderTodos = (todos) => {
     meta.append(date, priority);
     content.append(title, meta);
 
+    const text = document.createElement("span");
+    text.textContent = todo;
+main
+
     const removeButton = document.createElement("button");
     removeButton.type = "button";
     removeButton.textContent = "Löschen";
@@ -79,7 +90,11 @@ const renderTodos = (todos) => {
       renderTodos(updated);
     });
 
+ codex/create-simple-to-do-website-h3cyt1
     item.append(checkbox, content, removeButton);
+
+    item.append(text, removeButton);
+ main
     list.appendChild(item);
   });
 };
@@ -91,6 +106,7 @@ const addTodo = () => {
   }
 
   const todos = loadTodos();
+ codex/create-simple-to-do-website-h3cyt1
   todos.push({
     text: value,
     dueDate: dateInput.value,
@@ -131,6 +147,15 @@ const loadTutorial = () => {
   renderTodos(sampleTodos);
 };
 
+
+  todos.push(value);
+  saveTodos(todos);
+  renderTodos(todos);
+  input.value = "";
+  input.focus();
+};
+
+main
 addButton.addEventListener("click", addTodo);
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -138,6 +163,9 @@ input.addEventListener("keydown", (event) => {
   }
 });
 
+codex/create-simple-to-do-website-h3cyt1
 tutorialButton.addEventListener("click", loadTutorial);
 
+
+main
 renderTodos(loadTodos());
